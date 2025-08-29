@@ -1,4 +1,4 @@
-# 🏗️ Construction Materials Product Catalogue
+# 🏗️ Product Catalogue
 
 A professional, responsive product catalogue built with **React + Vite**.  
 Created as part of the _60-Minute Product Catalogue Challenge_ to demonstrate business-focused UI design, technical skills, and strategic thinking.
@@ -8,7 +8,6 @@ Created as part of the _60-Minute Product Catalogue Challenge_ to demonstrate bu
 ## 🚀 Live Demo
 
 - 🌐 Netlify: [https://prodcut-catalogue405.netlify.app](https://construction-catalogue.netlify.app)
-- _(Optional: Vercel link if you deploy there too)_
 
 ---
 
@@ -24,10 +23,10 @@ Created as part of the _60-Minute Product Catalogue Challenge_ to demonstrate bu
 ## 🧰 Features
 
 ✅ Search by **name, category, or SKU**  
-✅ Responsive **two-column product cards** (image left, details right)  
+✅ Responsive **two-column product cards**
 ✅ Stock status badges (**In Stock / Low Stock / Out of Stock**)  
-✅ **Modern navbar** (title left, search right)  
-✅ **Professional colour palette** inspired by Libra Europe brand guidelines  
+✅ **Modern navbar**  
+✅ **Professional colour palette** inspired by Libra Europe brand  
 ✅ Accessible, mobile-first design
 
 ---
