@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* ===== Brand palette (approx from the doc) ===== */
+:root{
+  --navy: #14376B;         /* headings / brand */
+  --teal: #1AA4B7;         /* primary accent */
+  --teal-600:#148EA0;
+  --sky:  #7ECBE3;         /* light accent / focus ring */
+  --ink:  #0F172A;         /* dark text */
+  --slate:#475569;         /* secondary text */
+  --muted:#E6EEF4;         /* light lines/fills */
+  --bg:   #F7FAFC;         /* app background */
+  --white:#FFFFFF;
+}
+
+/* ===== App frame ===== */
+#root { 
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;              /* navbar controls its own padding */
+  text-align: initial;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100dvh;
+}
+
+/* Shared content container */
+.container,
+.nav-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+/* ===== Navbar (title left, search right) ===== */
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid #E9EEF3;
+  box-shadow: 0 2px 8px rgba(20,55,107,0.06);
+}
+.nav-inner{
+  height: 68px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand{
+  color: var(--navy);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: .2px;
+}
+
+/* Search (right) */
+.nav-search{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr max-content;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-input{
+  height: 42px;
+  min-width: 280px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid #D5E3EC;
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.nav-input::placeholder{ color: #8AA1B2; }
+.nav-input:focus{
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sky) 35%, transparent);
+}
+
+.nav-btn{
+  height: 42px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: var(--teal);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s ease, transform .05s ease;
+}
+.nav-btn:hover{ background: var(--teal-600); }
+.nav-btn:active{ transform: translateY(1px); }
+
+/* Mobile: stack search under title */
+@media (max-width: 640px){
+  .nav-inner{ grid-template-columns: 1fr; height: auto; padding-block: 12px; row-gap: 12px; }
+  .nav-search{ grid-auto-flow: row; }
+  .nav-input{ width: 100%; min-width: 0; }
+}
+
+/* ===== Main layout ===== */
+.container{ padding-top: 20px; }
+
+.catalogue{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 48px);
+}
+
+/* list layout for product cards */
+.product-list{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== Optional: card theming helpers (if you use these classes) ===== */
+.product-card{
+  background: var(--white);
+  border: 1px solid #E5EDF3;
+  box-shadow: 0 2px 8px rgba(20,55,107,0.06);
+  border-radius: 10px;
+}
+
+/* badge colors aligned to palette */
+.status.in-stock{
+  background: #E6F8EE;
+  color: #1C7C49;
+}
+.status.low-stock{
+  background: #FFF3C4;
+  color: #915803;
+}
+.status.out-of-stock{
+  background: #FDE2E2;
+  color: #9B1C1C;
+}
+
+/* Generic button style (if you re-use) */
+.view-btn{
+  background: var(--teal);
+  color: var(--white);
+}
+.view-btn:hover{ background: var(--teal-600); }
